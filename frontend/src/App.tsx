@@ -51,33 +51,30 @@ function App() {
     <div className="container">
       <h1>AI Chat Demo</h1>
       <form onSubmit={handleSubmit} className="chat-form">
-        <label>
-          OpenAI API Key:
-          <input
-            type="password"
-            value={apiKey}
-            onChange={e => setApiKey(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Developer Message:
-          <input
-            type="text"
-            value={developerMessage}
-            onChange={e => setDeveloperMessage(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          User Message:
-          <input
-            type="text"
-            value={userMessage}
-            onChange={e => setUserMessage(e.target.value)}
-            required
-          />
-        </label>
+        <label htmlFor="api-key">OpenAI API Key:</label>
+        <input
+          id="api-key"
+          type="password"
+          value={apiKey}
+          onChange={e => setApiKey(e.target.value)}
+          required
+        />
+        <label htmlFor="developer-message">Developer Message:</label>
+        <input
+          id="developer-message"
+          type="text"
+          value={developerMessage}
+          onChange={e => setDeveloperMessage(e.target.value)}
+          required
+        />
+        <label htmlFor="user-message">User Message:</label>
+        <input
+          id="user-message"
+          type="text"
+          value={userMessage}
+          onChange={e => setUserMessage(e.target.value)}
+          required
+        />
         <button type="submit" disabled={loading}>
           {loading ? 'Sending...' : 'Send'}
         </button>
